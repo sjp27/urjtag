@@ -25,6 +25,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <byteswap.h>
 
 #include <urjtag/part.h>
 #include <urjtag/chain.h>
@@ -47,8 +48,14 @@ typedef struct
     urj_part_signal_t *nwe;
     urj_part_signal_t *nfoe;
     urj_part_signal_t *nwp;
+    urj_part_signal_t *lbctl;
+    urj_part_signal_t *la24;
+    urj_part_signal_t *la25;
+
     int lbc_num_d;
     char revbits;
+    char byteswap;
+    char uselbctl;
 } bus_params_t;
 
 #define LAST_ADR        ((bus_params_t *) bus->params)->last_adr
@@ -59,7 +66,12 @@ typedef struct
 #define nWE             ((bus_params_t *) bus->params)->nwe
 #define nFOE            ((bus_params_t *) bus->params)->nfoe
 #define nWP             ((bus_params_t *) bus->params)->nwp
+#define LBCTL           ((bus_params_t *) bus->params)->lbctl
+#define LA24            ((bus_params_t *) bus->params)->la24
+#define LA25            ((bus_params_t *) bus->params)->la25
 #define REVBITS         ((bus_params_t *) bus->params)->revbits
+#define BYTESWAP        ((bus_params_t *) bus->params)->byteswap
+#define USELBCTL        ((bus_params_t *) bus->params)->uselbctl
 
 /**
  * bus->driver->(*new_bus)
@@ -75,10 +87,12 @@ mpc8313_bus_new (urj_chain_t *chain, const urj_bus_driver_t *driver,
     char buff[10];
     int i;
     int failed = 0;
-    const char *nwppin = NULL, *noepin = NULL, *ncspin = NULL, *nwepin = NULL;
+    const char *nwppin = NULL, *noepin = NULL, *ncspin = NULL, *nwepin = NULL, *la24pin = NULL, *la25pin = NULL;
 
     bus = urj_bus_generic_new (chain, driver, sizeof (bus_params_t));
     REVBITS = 0;
+    BYTESWAP = 0;
+    USELBCTL = 0;
 
     for (i = 0; cmd_params[i] != NULL; i++)
     {
@@ -92,7 +106,12 @@ mpc8313_bus_new (urj_chain_t *chain, const urj_bus_driver_t *driver,
                        "   NWE     signal name to control write enable pin (default - LWE_B0)\n"
                        "   NCS     signal name for the bus Chip select (default - LCS_B0)\n"
                        "   REVBITS reverse bits in data bus (default - no)\n"
-                       "   NWP     signal name to control write protection pin if it neccessary (for e.g. TSEC2_RXD3)\n"));
+                       "   NWP     signal name to control write protection pin if it necessary (for e.g. TSEC2_RXD3)\n"
+                       "   BYTESWAP swap bytes in data bus (default - no)\n"
+                       "   USELBCTL use line buffer control LBCTL (default - no)\n"
+                       "   LA24    signal name to control LA24 pin if necessary)\n"
+                       "   LA25    signal name to control LA25 pin if necessary)\n"
+                       ));
             return NULL;
         case URJ_BUS_PARAM_KEY_NWP:
             nwppin = cmd_params[i]->value.string;
@@ -108,6 +127,18 @@ mpc8313_bus_new (urj_chain_t *chain, const urj_bus_driver_t *driver,
             break;
         case URJ_BUS_PARAM_KEY_REVBITS:
             REVBITS = 1;
+            break;
+        case URJ_BUS_PARAM_KEY_BYTESWAP:
+            BYTESWAP = 1;
+            break;
+        case URJ_BUS_PARAM_KEY_USELBCTL:
+            USELBCTL = 1;
+            break;
+        case URJ_BUS_PARAM_KEY_LA24:
+            la24pin = cmd_params[i]->value.string;
+            break;
+        case URJ_BUS_PARAM_KEY_LA25:
+            la25pin = cmd_params[i]->value.string;
             break;
         default:
             urj_error_set (URJ_ERROR_SYNTAX, "unrecognised bus parameter '%s'",
@@ -150,25 +181,55 @@ mpc8313_bus_new (urj_chain_t *chain, const urj_bus_driver_t *driver,
     }
 
     if (noepin == NULL)
+    {
         failed = 255;
+    }
     else
+    {
         failed |= urj_bus_generic_attach_sig (part, &(nFOE), noepin);
+    }
 
     if (nwepin == NULL)
-        failed |= urj_bus_generic_attach_sig (part, &(nWE), "LWE_B0");
-    else
-        failed |= urj_bus_generic_attach_sig (part, &(nWE), nwepin);
+    {
+        nwepin="LWE_B0";
+    }
+    
+    failed |= urj_bus_generic_attach_sig (part, &(nWE), nwepin);
 
     if (ncspin == NULL)
-        failed |= urj_bus_generic_attach_sig (part, &(nCS), "LCS_B0");
-    else
-        failed |= urj_bus_generic_attach_sig (part, &(nCS), ncspin);
+    {
+        ncspin="LCS_B0";
+    }
+    
+    failed |= urj_bus_generic_attach_sig (part, &(nCS), ncspin);
+
+    if (USELBCTL == 1)
+    {
+        failed |= urj_bus_generic_attach_sig (part, &(LBCTL), "LBCTL");
+    }
+    
+    if (la24pin != NULL)
+    {
+        failed |= urj_bus_generic_attach_sig (part, &(LA24), la24pin);
+    }
+    
+    if (la25pin != NULL)
+    {
+        failed |= urj_bus_generic_attach_sig (part, &(LA25), la25pin);
+    }
 
     if (failed)
     {
+        urj_log (URJ_LOG_LEVEL_NORMAL,
+                         _("mpc8313 bus failed %d\n"), failed);
+
         urj_bus_generic_free (bus);
         return NULL;
     }
+    
+    urj_log (URJ_LOG_LEVEL_NORMAL,
+                     _("mpc8313 bus [NOE=%s] [NWE=%s] [NCS=%s] [REVBITS=%d] [NWP=%s] [BYTESWAP=%d] [USELBCTL=%d] [LA24=%s] [LA25=%s]\n"),
+                     noepin, nwepin, ncspin, (int)REVBITS, nwppin, (int)BYTESWAP, (int)USELBCTL, la24pin, la25pin);
 
     return bus;
 }
@@ -214,6 +275,30 @@ setup_address (urj_bus_t *bus, uint32_t a)
 
     for (i = 0; i < A_WIDTH ; i++)
         urj_part_set_signal (p, LA[A_WIDTH - 1 - i], 1, (a >> i) & 1);
+    
+    if(LA24 != NULL)
+    {
+        if(a & (1 << 24))
+        {
+            urj_part_set_signal_high (p, LA24);
+        }
+        else
+        {
+            urj_part_set_signal_low (p, LA24);
+        }
+    }
+
+    if(LA25 != NULL)
+    {
+        if(a & (1 << 25))
+        {
+            urj_part_set_signal_high (p, LA25);
+        }
+        else
+        {
+            urj_part_set_signal_low (p, LA25);
+        }
+    }
 }
 
 static void
@@ -278,6 +363,11 @@ mpc8313_bus_read_start (urj_bus_t *bus, uint32_t adr)
     urj_part_set_signal_low (p, nCS);
     urj_part_set_signal_high (p, nWE);
     urj_part_set_signal_low (p, nFOE);
+    
+    if(USELBCTL == 1)
+    {
+        urj_part_set_signal_low (p, LBCTL);
+    }
 
     setup_address (bus, adr);
     set_data_in (bus, adr);
@@ -301,6 +391,9 @@ mpc8313_bus_read_next (urj_bus_t *bus, uint32_t adr)
 
     d = get_data (bus, LAST_ADR);
     LAST_ADR = adr;
+
+    d = (BYTESWAP == 1) ? __bswap_16((uint16_t)d) : d;
+    
     return d;
 }
 
@@ -311,14 +404,25 @@ mpc8313_bus_read_next (urj_bus_t *bus, uint32_t adr)
 static uint32_t
 mpc8313_bus_read_end (urj_bus_t *bus)
 {
+    uint32_t d;
+    
     urj_part_t *p = bus->part;
 
     urj_part_set_signal_high (p, nCS);
     urj_part_set_signal_high (p, nFOE);
+    
+    if(USELBCTL == 1)
+    {
+        urj_part_set_signal_high (p, LBCTL);
+    }
 
     urj_tap_chain_shift_data_registers (bus->chain, 1);
 
-    return get_data (bus, LAST_ADR);
+    d = get_data (bus, LAST_ADR);
+
+    d = (BYTESWAP == 1) ? __bswap_16((uint16_t)d) : d;
+
+    return d;
 }
 
 /**
@@ -337,13 +441,18 @@ mpc8313_bus_write (urj_bus_t *bus, uint32_t adr, uint32_t data)
     urj_part_set_signal_low (p, nCS);
     urj_part_set_signal_high (p, nWE);
     urj_part_set_signal_high (p, nFOE);
+    
+    if(USELBCTL == 1)
+    {
+        urj_part_set_signal_high (p, LBCTL);
+    }
 
     if (nWP != NULL)
         urj_part_set_signal_low (p, nWP);
 
     setup_address (bus, adr);
 
-    setup_data (bus, adr, data);
+    setup_data (bus, adr, (BYTESWAP == 1) ? __bswap_16((uint16_t)data) : data);
 
     urj_tap_chain_shift_data_registers (bus->chain, 0);
 
