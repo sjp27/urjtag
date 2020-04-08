@@ -1,0 +1,1057 @@
+signal XCOREVSS2
+signal XCOREVSS1
+signal XCOREVSS0
+signal RXB
+signal SDAVSS
+signal RXA
+signal XPADVSS1
+signal XCOREVDD2
+signal XPADVSS0
+signal XCOREVDD1
+signal XCOREVDD0
+signal SDAVDD
+signal SD_IMP_CAL_TX
+signal RXB_B
+signal RXA_B
+signal SD_IMP_CAL_RX
+signal XPADVDD1
+signal XPADVDD0
+signal SD_PLL_TPA_ANA
+signal VSS(0)
+signal VSS(1)
+signal VSS(2)
+signal VSS(3)
+signal VSS(4)
+signal VSS(5)
+signal VSS(6)
+signal VSS(7)
+signal VSS(8)
+signal VSS(9)
+signal VSS(10)
+signal VSS(11)
+signal VSS(12)
+signal VSS(13)
+signal VSS(14)
+signal VSS(15)
+signal VSS(16)
+signal VSS(17)
+signal VSS(18)
+signal VSS(19)
+signal VSS(20)
+signal VSS(21)
+signal VSS(22)
+signal VSS(23)
+signal VSS(24)
+signal VSS(25)
+signal VSS(26)
+signal VSS(27)
+signal VSS(28)
+signal VSS(29)
+signal VSS(30)
+signal VSS(31)
+signal VSS(32)
+signal VSS(33)
+signal VSS(34)
+signal VSS(35)
+signal VSS(36)
+signal VSS(37)
+signal VSS(38)
+signal VSS(39)
+signal VSS(40)
+signal VSS(41)
+signal VSS(42)
+signal VSS(43)
+signal VSS(44)
+signal VSS(45)
+signal VSS(46)
+signal VSS(47)
+signal VSS(48)
+signal VSS(49)
+signal VSS(50)
+signal VSS(51)
+signal VSS(52)
+signal VSS(53)
+signal VSS(54)
+signal VSS(55)
+signal VSS(56)
+signal VSS(57)
+signal VSS(58)
+signal VSS(59)
+signal VSS(60)
+signal VSS(61)
+signal VSS(62)
+signal VSS(63)
+signal VSS(64)
+signal VSS(65)
+signal VSS(66)
+signal VSS(67)
+signal VSS(68)
+signal VSS(69)
+signal VSS(70)
+signal VSS(71)
+signal VSS(72)
+signal VSS(73)
+signal VSS(74)
+signal VSS(75)
+signal VSS(76)
+signal VSS(77)
+signal VSS(78)
+signal VSS(79)
+signal VSS(80)
+signal VSS(81)
+signal VSS(82)
+signal VSS(83)
+signal VSS(84)
+signal VSS(85)
+signal VSS(86)
+signal VSS(87)
+signal VSS(88)
+signal VSS(89)
+signal VSS(90)
+signal VSS(91)
+signal VSS(92)
+signal VSS(93)
+signal VSS(94)
+signal VSS(95)
+signal VSS(96)
+signal VSS(97)
+signal VSS(98)
+signal VSS(99)
+signal VSS(100)
+signal VSS(101)
+signal VSS(102)
+signal VSS(103)
+signal VSS(104)
+signal VSS(105)
+signal VSS(106)
+signal VSS(107)
+signal VSS(108)
+signal VDDC(0)
+signal VDDC(1)
+signal VDDC(2)
+signal VDDC(3)
+signal VDDC(4)
+signal VDDC(5)
+signal VDDC(6)
+signal VDDC(7)
+signal VDDC(8)
+signal VDDC(9)
+signal VDDC(10)
+signal VDDC(11)
+signal VDDC(12)
+signal VDDC(13)
+signal VDDC(14)
+signal VDDC(15)
+signal VDDC(16)
+signal VDDC(17)
+signal VDDC(18)
+signal VDDC(19)
+signal VDDC(20)
+signal VDDC(21)
+signal VDDC(22)
+signal VDDC(23)
+signal VDDC(24)
+signal VDDC(25)
+signal VDD(0)
+signal VDD(1)
+signal VDD(2)
+signal VDD(3)
+signal VDD(4)
+signal VDD(5)
+signal VDD(6)
+signal VDD(7)
+signal VDD(8)
+signal VDD(9)
+signal VDD(10)
+signal VDD(11)
+signal VDD(12)
+signal VDD(13)
+signal USB_VSSA_BIAS
+signal USB_VDDA_BIAS
+signal USB_VDDA
+signal USB_VBUS
+signal USB_TPA
+signal USB_RBIAS
+signal USB_PLL_PWR3
+signal USB_PLL_PWR1
+signal USB_PLL_GND
+signal USB_DP
+signal USB_DM
+signal USB_CR_CLK_OUT
+signal THERM1
+signal THERM0
+signal SYS_CR_CLK_OUT
+signal NVDD(0)
+signal NVDD(1)
+signal NVDD(2)
+signal NVDD(3)
+signal NVDD(4)
+signal NVDD(5)
+signal NVDD(6)
+signal NVDD(7)
+signal NVDD(8)
+signal NVDD(9)
+signal NVDD(10)
+signal NVDD(11)
+signal NVDD(12)
+signal NVDD(13)
+signal NVDD(14)
+signal NVDD(15)
+signal NVDD(16)
+signal MVREF(0)
+signal MVREF(1)
+signal LVDDB(0)
+signal LVDDB(1)
+signal LVDDB(2)
+signal LVDDB(3)
+signal LVDDA(0)
+signal LVDDA(1)
+signal LVDD(0)
+signal LVDD(1)
+signal LVDD(2)
+signal LVDD(3)
+signal LVDD(4)
+signal LVDD(5)
+signal LVDD(6)
+signal LVDD(7)
+signal LVDD(8)
+signal LVDD(9)
+signal GVDD(0)
+signal GVDD(1)
+signal GVDD(2)
+signal GVDD(3)
+signal GVDD(4)
+signal GVDD(5)
+signal GVDD(6)
+signal GVDD(7)
+signal GVDD(8)
+signal GVDD(9)
+signal GVDD(10)
+signal GVDD(11)
+signal GVDD(12)
+signal GVDD(13)
+signal GVDD(14)
+signal GVDD(15)
+signal GVDD(16)
+signal GVDD(17)
+signal GVDD(18)
+signal GVDD(19)
+signal GVDD(20)
+signal AVDD2
+signal AVDD1
+signal SD_PLL_TPD
+signal TXB
+signal TXA
+signal SD_REF_CLK
+signal TXB_B
+signal TXA_B
+signal SD_REF_CLK_B
+signal USB_CR_CLK_IN
+signal USB_CLK_IN
+signal USBDR_PWRFAULT
+signal USBDR_PCTL1
+signal USBDR_PCTL0
+signal USBDR_DRIVE_VBUS
+signal UART_SOUT2
+signal UART_SOUT1
+signal UART_SIN2
+signal UART_SIN1
+signal UART_RTS_B2
+signal UART_RTS_B1
+signal UART_CTS_B2
+signal UART_CTS_B1
+signal TSEC2_TX_ER
+signal TSEC2_TX_EN
+signal TSEC2_TX_CLK
+signal TSEC2_TXD3
+signal TSEC2_TXD2
+signal TSEC2_TXD1
+signal TSEC2_TXD0
+signal TSEC2_RX_ER
+signal TSEC2_RX_DV
+signal TSEC2_RX_CLK
+signal TSEC2_RXD3
+signal TSEC2_RXD2
+signal TSEC2_RXD1
+signal TSEC2_RXD0
+signal TSEC2_GTX_CLK
+signal TSEC2_CRS
+signal TSEC2_COL
+signal TSEC1_TX_ER
+signal TSEC1_TX_EN
+signal TSEC1_TX_CLK
+signal TSEC1_TXD3
+signal TSEC1_TXD2
+signal TSEC1_TXD1
+signal TSEC1_TXD0
+signal TSEC1_RX_ER
+signal TSEC1_RX_DV
+signal TSEC1_RX_CLK
+signal TSEC1_RXD3
+signal TSEC1_RXD2
+signal TSEC1_RXD1
+signal TSEC1_RXD0
+signal TSEC1_MDIO
+signal TSEC1_MDC
+signal TSEC1_GTX_CLK125
+signal TSEC1_GTX_CLK
+signal TSEC1_CRS
+signal TSEC1_COL
+signal TRST_B
+signal TMS
+signal TEST_MODE
+signal TDO
+signal TDI
+signal TCK
+signal SYS_CR_CLK_IN
+signal SYS_CLK_IN
+signal SRESET_B
+signal SPISEL
+signal SPIMOSI
+signal SPIMISO
+signal SPICLK
+signal RTC_PIT_CLOCK
+signal QUIESCE_B
+signal PORESET_B
+signal PCI_TRDY_B
+signal PCI_SYNC_OUT
+signal PCI_SYNC_IN
+signal PCI_STOP_B
+signal PCI_SERR_B
+signal PCI_RESET_OUT_B
+signal PCI_REQ_B2
+signal PCI_REQ_B1
+signal PCI_REQ_B0
+signal PCI_PME_B
+signal PCI_PERR_B
+signal PCI_PAR
+signal PCI_IRDY_B
+signal PCI_INTA
+signal PCI_IDSEL
+signal PCI_GNT_B2
+signal PCI_GNT_B1
+signal PCI_GNT_B0
+signal PCI_FRAME_B
+signal PCI_DEVSEL_B
+signal PCI_C_BE_B3
+signal PCI_C_BE_B2
+signal PCI_C_BE_B1
+signal PCI_C_BE_B0
+signal PCI_CLK2
+signal PCI_CLK1
+signal PCI_CLK0
+signal PCI_AD31
+signal PCI_AD30
+signal PCI_AD29
+signal PCI_AD28
+signal PCI_AD27
+signal PCI_AD26
+signal PCI_AD25
+signal PCI_AD24
+signal PCI_AD23
+signal PCI_AD22
+signal PCI_AD21
+signal PCI_AD20
+signal PCI_AD19
+signal PCI_AD18
+signal PCI_AD17
+signal PCI_AD16
+signal PCI_AD15
+signal PCI_AD14
+signal PCI_AD13
+signal PCI_AD12
+signal PCI_AD11
+signal PCI_AD10
+signal PCI_AD9
+signal PCI_AD8
+signal PCI_AD7
+signal PCI_AD6
+signal PCI_AD5
+signal PCI_AD4
+signal PCI_AD3
+signal PCI_AD2
+signal PCI_AD1
+signal PCI_AD0
+signal MEMC_MWE_B
+signal MEMC_MRAS_B
+signal MEMC_MODT1
+signal MEMC_MODT0
+signal MEMC_MDQS3
+signal MEMC_MDQS2
+signal MEMC_MDQS1
+signal MEMC_MDQS0
+signal MEMC_MDQ31
+signal MEMC_MDQ30
+signal MEMC_MDQ29
+signal MEMC_MDQ28
+signal MEMC_MDQ27
+signal MEMC_MDQ26
+signal MEMC_MDQ25
+signal MEMC_MDQ24
+signal MEMC_MDQ23
+signal MEMC_MDQ22
+signal MEMC_MDQ21
+signal MEMC_MDQ20
+signal MEMC_MDQ19
+signal MEMC_MDQ18
+signal MEMC_MDQ17
+signal MEMC_MDQ16
+signal MEMC_MDQ15
+signal MEMC_MDQ14
+signal MEMC_MDQ13
+signal MEMC_MDQ12
+signal MEMC_MDQ11
+signal MEMC_MDQ10
+signal MEMC_MDQ9
+signal MEMC_MDQ8
+signal MEMC_MDQ7
+signal MEMC_MDQ6
+signal MEMC_MDQ5
+signal MEMC_MDQ4
+signal MEMC_MDQ3
+signal MEMC_MDQ2
+signal MEMC_MDQ1
+signal MEMC_MDQ0
+signal MEMC_MDM3
+signal MEMC_MDM2
+signal MEMC_MDM1
+signal MEMC_MDM0
+signal MEMC_MCS_B1
+signal MEMC_MCS_B0
+signal MEMC_MCK_B
+signal MEMC_MCKE
+signal MEMC_MCK
+signal MEMC_MCAS_B
+signal MEMC_MBA2
+signal MEMC_MBA1
+signal MEMC_MBA0
+signal MEMC_MA14
+signal MEMC_MA13
+signal MEMC_MA12
+signal MEMC_MA11
+signal MEMC_MA10
+signal MEMC_MA9
+signal MEMC_MA8
+signal MEMC_MA7
+signal MEMC_MA6
+signal MEMC_MA5
+signal MEMC_MA4
+signal MEMC_MA3
+signal MEMC_MA2
+signal MEMC_MA1
+signal MEMC_MA0
+signal MCP_OUT_B
+signal M66EN
+signal LWE_B1
+signal LWE_B0
+signal LGPL5
+signal LGPL4
+signal LGPL3
+signal LGPL2
+signal LGPL1
+signal LGPL0
+signal LCS_B3
+signal LCS_B2
+signal LCS_B1
+signal LCS_B0
+signal LCLK1
+signal LCLK0
+signal LBCTL
+signal LALE
+signal LAD15
+signal LAD14
+signal LAD13
+signal LAD12
+signal LAD11
+signal LAD10
+signal LAD9
+signal LAD8
+signal LAD7
+signal LAD6
+signal LAD5
+signal LAD4
+signal LAD3
+signal LAD2
+signal LAD1
+signal LAD0
+signal LA25
+signal LA24
+signal LA23
+signal LA22
+signal LA21
+signal LA20
+signal LA19
+signal LA18
+signal LA17
+signal LA16
+signal LA15
+signal LA14
+signal LA13
+signal LA12
+signal LA11
+signal LA10
+signal LA9
+signal LA8
+signal LA7
+signal LA6
+signal LA5
+signal LA4
+signal LA3
+signal LA2
+signal LA1
+signal LA0
+signal IRQ_B4
+signal IRQ_B3
+signal IRQ_B2
+signal IRQ_B1
+signal IRQ_B0_MCP_IN_B
+signal IIC2_SDA
+signal IIC2_SCL
+signal IIC1_SDA
+signal IIC1_SCL
+signal HRESET_B
+signal EXT_PWR_CTRL
+signal CFG_LBIU_MUX_EN
+signal CFG_CLKIN_DIV_B
+instruction length 8
+register DIR 32
+register BSR 531
+register BYPASS 1
+instruction PRELOAD 11110000 BSR
+instruction IDCODE 11110011 DIR
+instruction HIGHZ 11110010 BYPASS
+instruction EXTEST 00000000 BSR
+instruction CLAMP 11110001 BYPASS
+instruction BYPASS 11111111 BYPASS
+instruction SAMPLE/PRELOAD 11110000 BSR
+bit 0 C 0 *
+bit 1 B ? TSEC2_TXD3 0 0 Z
+bit 2 C 0 *
+bit 3 B ? TSEC2_TXD2 2 0 Z
+bit 4 C 0 *
+bit 5 B ? TSEC2_TX_EN 4 0 Z
+bit 6 C 0 *
+bit 7 B ? TSEC2_TXD1 6 0 Z
+bit 8 C 0 *
+bit 9 B ? TSEC2_TXD0 8 0 Z
+bit 10 C 0 *
+bit 11 B ? TSEC2_RX_ER 10 0 Z
+bit 12 C 0 *
+bit 13 B ? TSEC2_TX_CLK 12 0 Z
+bit 14 C 0 *
+bit 15 B ? TSEC2_RXD3 14 0 Z
+bit 16 C 0 *
+bit 17 B ? TSEC2_RX_DV 16 0 Z
+bit 18 C 0 *
+bit 19 B ? TSEC2_RXD2 18 0 Z
+bit 20 C 0 *
+bit 21 B ? TSEC2_RXD1 20 0 Z
+bit 22 C 0 *
+bit 23 B ? TSEC2_CRS 22 0 Z
+bit 24 C 0 *
+bit 25 B ? TSEC2_RXD0 24 0 Z
+bit 26 C 0 *
+bit 27 B ? TSEC2_RX_CLK 26 0 Z
+bit 28 C 0 *
+bit 29 B ? TSEC2_COL 28 0 Z
+bit 30 C 0 *
+bit 31 B ? TSEC2_GTX_CLK 30 0 Z
+bit 32 C 0 *
+bit 33 B ? TSEC1_COL 32 0 Z
+bit 34 O ? *
+bit 35 I ? TSEC1_GTX_CLK125
+bit 36 C 0 *
+bit 37 B ? TSEC1_CRS 36 0 Z
+bit 38 C 0 *
+bit 39 B ? TSEC1_GTX_CLK 38 0 Z
+bit 40 C 0 *
+bit 41 B ? TSEC1_RX_CLK 40 0 Z
+bit 42 C 0 *
+bit 43 B ? TSEC1_RX_DV 42 0 Z
+bit 44 O ? *
+bit 45 I ? TSEC1_RXD0
+bit 46 C 0 *
+bit 47 B ? TSEC1_RXD1 46 0 Z
+bit 48 O ? *
+bit 49 I ? TSEC1_RX_ER
+bit 50 C 0 *
+bit 51 B ? TSEC1_RXD2 50 0 Z
+bit 52 C 0 *
+bit 53 B ? TSEC1_RXD3 52 0 Z
+bit 54 C 0 *
+bit 55 B ? TSEC1_TX_EN 54 0 Z
+bit 56 O ? *
+bit 57 I ? TSEC1_TX_CLK
+bit 58 O ? *
+bit 59 O ? TSEC1_TXD0
+bit 60 C 0 *
+bit 61 B ? TSEC1_TX_ER 60 0 Z
+bit 62 O ? *
+bit 63 O ? TSEC1_TXD1
+bit 64 O ? *
+bit 65 O ? TSEC1_TXD2
+bit 66 O ? *
+bit 67 O ? TSEC1_TXD3
+bit 68 C 0 *
+bit 69 B ? TSEC1_MDC 68 0 Z
+bit 70 C 0 *
+bit 71 B ? TSEC1_MDIO 70 0 Z
+bit 72 C 0 *
+bit 73 O ? PCI_GNT_B2 72 0 Z
+bit 74 C 0 *
+bit 75 O ? PCI_GNT_B1 74 0 Z
+bit 76 O ? *
+bit 77 I ? PCI_REQ_B2
+bit 78 C 0 *
+bit 79 B ? PCI_INTA 78 0 Z
+bit 80 C 0 *
+bit 81 B ? PCI_REQ_B0 80 0 Z
+bit 82 O ? *
+bit 83 I ? PCI_REQ_B1
+bit 84 C 0 *
+bit 85 B ? PCI_AD29 84 0 Z
+bit 86 C 0 *
+bit 87 B ? PCI_AD31 86 0 Z
+bit 88 C 0 *
+bit 89 B ? PCI_RESET_OUT_B 88 0 Z
+bit 90 C 0 *
+bit 91 B ? PCI_AD28 90 0 Z
+bit 92 C 0 *
+bit 93 B ? PCI_GNT_B0 92 0 Z
+bit 94 C 0 *
+bit 95 B ? PCI_AD26 94 0 Z
+bit 96 C 0 *
+bit 97 B ? PCI_AD24 96 0 Z
+bit 98 C 0 *
+bit 99 B ? PCI_AD30 98 0 Z
+bit 100 C 0 *
+bit 101 B ? PCI_AD27 100 0 Z
+bit 102 C 0 *
+bit 103 B ? PCI_AD25 102 0 Z
+bit 104 C 0 *
+bit 105 B ? PCI_AD21 104 0 Z
+bit 106 C 0 *
+bit 107 B ? PCI_C_BE_B3 106 0 Z
+bit 108 C 0 *
+bit 109 B ? PCI_AD23 108 0 Z
+bit 110 C 0 *
+bit 111 B ? PCI_AD22 110 0 Z
+bit 112 C 0 *
+bit 113 B ? PCI_TRDY_B 112 0 Z
+bit 114 C 0 *
+bit 115 B ? PCI_AD20 114 0 Z
+bit 116 C 0 *
+bit 117 B ? PCI_STOP_B 116 0 Z
+bit 118 C 0 *
+bit 119 B ? PCI_C_BE_B2 118 0 Z
+bit 120 C 0 *
+bit 121 B ? PCI_AD19 120 0 Z
+bit 122 C 0 *
+bit 123 B ? PCI_AD18 122 0 Z
+bit 124 C 0 *
+bit 125 B ? PCI_DEVSEL_B 124 0 Z
+bit 126 C 0 *
+bit 127 B ? PCI_AD16 126 0 Z
+bit 128 C 0 *
+bit 129 B ? PCI_AD17 128 0 Z
+bit 130 C 0 *
+bit 131 B ? PCI_SERR_B 130 0 Z
+bit 132 C 0 *
+bit 133 B ? PCI_PERR_B 132 0 Z
+bit 134 C 0 *
+bit 135 B ? PCI_IRDY_B 134 0 Z
+bit 136 C 0 *
+bit 137 B ? PCI_C_BE_B1 136 0 Z
+bit 138 C 0 *
+bit 139 B ? PCI_FRAME_B 138 0 Z
+bit 140 C 0 *
+bit 141 B ? PCI_PAR 140 0 Z
+bit 142 C 0 *
+bit 143 O ? PCI_CLK0 142 0 Z
+bit 144 C 0 *
+bit 145 O ? PCI_CLK2 144 0 Z
+bit 146 C 0 *
+bit 147 O ? PCI_CLK1 146 0 Z
+bit 148 C 0 *
+bit 149 B ? PCI_AD14 148 0 Z
+bit 150 C 0 *
+bit 151 B ? PCI_AD15 150 0 Z
+bit 152 C 0 *
+bit 153 B ? PCI_AD13 152 0 Z
+bit 154 C 0 *
+bit 155 B ? PCI_AD12 154 0 Z
+bit 156 C 0 *
+bit 157 B ? PCI_AD9 156 0 Z
+bit 158 O ? *
+bit 159 I ? PCI_IDSEL
+bit 160 C 0 *
+bit 161 B ? PCI_AD8 160 0 Z
+bit 162 C 0 *
+bit 163 B ? PCI_AD11 162 0 Z
+bit 164 C 0 *
+bit 165 B ? PCI_AD10 164 0 Z
+bit 166 C 0 *
+bit 167 B ? PCI_AD6 166 0 Z
+bit 168 C 0 *
+bit 169 B ? PCI_AD5 168 0 Z
+bit 170 C 0 *
+bit 171 B ? PCI_C_BE_B0 170 0 Z
+bit 172 C 0 *
+bit 173 B ? PCI_AD7 172 0 Z
+bit 174 C 0 *
+bit 175 B ? PCI_AD3 174 0 Z
+bit 176 C 0 *
+bit 177 B ? PCI_AD2 176 0 Z
+bit 178 O ? *
+bit 179 I ? M66EN
+bit 180 C 0 *
+bit 181 B ? PCI_AD4 180 0 Z
+bit 182 C 0 *
+bit 183 B ? PCI_AD1 182 0 Z
+bit 184 C 0 *
+bit 185 B ? PCI_AD0 184 0 Z
+bit 186 C 0 *
+bit 187 B ? PCI_PME_B 186 0 Z
+bit 188 C 0 *
+bit 189 B ? USBDR_DRIVE_VBUS 188 0 Z
+bit 190 C 0 *
+bit 191 B ? USBDR_PWRFAULT 190 0 Z
+bit 192 O ? *
+bit 193 O ? USBDR_PCTL0
+bit 194 O ? *
+bit 195 O ? USBDR_PCTL1
+bit 196 O ? *
+bit 197 O ? LA12
+bit 198 C 0 *
+bit 199 B ? LA0 198 0 Z
+bit 200 O ? *
+bit 201 O ? LA16
+bit 202 O ? *
+bit 203 O ? LA17
+bit 204 O ? *
+bit 205 O ? LA18
+bit 206 O ? *
+bit 207 O ? LA19
+bit 208 O ? *
+bit 209 O ? LA20
+bit 210 O ? *
+bit 211 O ? LA21
+bit 212 O ? *
+bit 213 O ? LA22
+bit 214 O ? *
+bit 215 O ? LGPL0
+bit 216 O ? *
+bit 217 O ? LGPL1
+bit 218 O ? *
+bit 219 O ? LGPL2
+bit 220 O ? *
+bit 221 O ? LGPL3
+bit 222 C 0 *
+bit 223 B ? LGPL4 222 0 Z
+bit 224 C 0 *
+bit 225 B ? LA1 224 0 Z
+bit 226 C 0 *
+bit 227 B ? LA2 226 0 Z
+bit 228 C 0 *
+bit 229 B ? LA3 228 0 Z
+bit 230 C 0 *
+bit 231 B ? LA4 230 0 Z
+bit 232 C 0 *
+bit 233 B ? LA5 232 0 Z
+bit 234 C 0 *
+bit 235 B ? LA6 234 0 Z
+bit 236 C 0 *
+bit 237 B ? LA7 236 0 Z
+bit 238 C 0 *
+bit 239 B ? LA8 238 0 Z
+bit 240 C 0 *
+bit 241 B ? LA9 240 0 Z
+bit 242 C 0 *
+bit 243 B ? LA10 242 0 Z
+bit 244 O ? *
+bit 245 O ? LA11
+bit 246 O ? *
+bit 247 I ? SYS_CLK_IN
+bit 248 O ? *
+bit 249 O ? PCI_SYNC_OUT
+bit 250 O ? *
+bit 251 I ? SYS_CR_CLK_IN
+bit 252 O ? *
+bit 253 I ? USB_CLK_IN
+bit 254 O ? *
+bit 255 I ? USB_CR_CLK_IN
+bit 256 O ? *
+bit 257 I ? RTC_PIT_CLOCK
+bit 258 O ? *
+bit 259 I ? PCI_SYNC_IN
+bit 260 O ? *
+bit 261 I ? CFG_LBIU_MUX_EN
+bit 262 O ? *
+bit 263 O ? LA13
+bit 264 C 0 *
+bit 265 B ? LA14 264 0 Z
+bit 266 O ? *
+bit 267 O ? LA15
+bit 268 C 0 *
+bit 269 B ? LAD0 268 0 Z
+bit 270 C 0 *
+bit 271 B ? LAD1 270 0 Z
+bit 272 O ? *
+bit 273 O ? LBCTL
+bit 274 C 0 *
+bit 275 B ? LAD2 274 0 Z
+bit 276 C 0 *
+bit 277 B ? LAD3 276 0 Z
+bit 278 O ? *
+bit 279 O ? LCS_B1
+bit 280 C 0 *
+bit 281 B ? LAD4 280 0 Z
+bit 282 C 0 *
+bit 283 B ? LAD5 282 0 Z
+bit 284 O ? *
+bit 285 O ? LWE_B1
+bit 286 C 0 *
+bit 287 B ? LAD6 286 0 Z
+bit 288 C 0 *
+bit 289 B ? LAD7 288 0 Z
+bit 290 O ? *
+bit 291 O ? LCLK1
+bit 292 C 0 *
+bit 293 B ? LAD8 292 0 Z
+bit 294 C 0 *
+bit 295 B ? LAD9 294 0 Z
+bit 296 O ? *
+bit 297 O ? LCLK0
+bit 298 C 0 *
+bit 299 B ? LAD10 298 0 Z
+bit 300 C 0 *
+bit 301 B ? LAD11 300 0 Z
+bit 302 O ? *
+bit 303 O ? LALE
+bit 304 C 0 *
+bit 305 B ? LAD12 304 0 Z
+bit 306 C 0 *
+bit 307 B ? LAD13 306 0 Z
+bit 308 O ? *
+bit 309 O ? LCS_B3
+bit 310 C 0 *
+bit 311 B ? LAD14 310 0 Z
+bit 312 C 0 *
+bit 313 B ? LAD15 312 0 Z
+bit 314 O ? *
+bit 315 O ? LWE_B0
+bit 316 O ? *
+bit 317 O ? LA24
+bit 318 O ? *
+bit 319 O ? LCS_B2
+bit 320 O ? *
+bit 321 O ? LCS_B0
+bit 322 O ? *
+bit 323 O ? LA23
+bit 324 O ? *
+bit 325 O ? LA25
+bit 326 O ? *
+bit 327 O ? LGPL5
+bit 328 O ? *
+bit 329 O ? MEMC_MODT1
+bit 330 O ? *
+bit 331 O ? MEMC_MODT0
+bit 332 C 0 *
+bit 333 B ? MEMC_MDQS3 332 0 Z
+bit 334 C 0 *
+bit 335 B ? MEMC_MDQ30 334 0 Z
+bit 336 C 0 *
+bit 337 B ? MEMC_MDQ31 336 0 Z
+bit 338 C 0 *
+bit 339 O ? MEMC_MDM3 338 0 Z
+bit 340 C 0 *
+bit 341 B ? MEMC_MDQ25 340 0 Z
+bit 342 C 0 *
+bit 343 B ? MEMC_MDQ24 342 0 Z
+bit 344 C 0 *
+bit 345 B ? MEMC_MDQ26 344 0 Z
+bit 346 C 0 *
+bit 347 B ? MEMC_MDQ28 346 0 Z
+bit 348 C 0 *
+bit 349 B ? MEMC_MDQ27 348 0 Z
+bit 350 C 0 *
+bit 351 B ? MEMC_MDQ29 350 0 Z
+bit 352 C 0 *
+bit 353 O ? MEMC_MDM2 352 0 Z
+bit 354 C 0 *
+bit 355 B ? MEMC_MDQ22 354 0 Z
+bit 356 C 0 *
+bit 357 B ? MEMC_MDQ23 356 0 Z
+bit 358 C 0 *
+bit 359 B ? MEMC_MDQS2 358 0 Z
+bit 360 C 0 *
+bit 361 B ? MEMC_MDQ17 360 0 Z
+bit 362 C 0 *
+bit 363 B ? MEMC_MDQ19 362 0 Z
+bit 364 C 0 *
+bit 365 B ? MEMC_MDQ16 364 0 Z
+bit 366 C 0 *
+bit 367 B ? MEMC_MDQ21 366 0 Z
+bit 368 C 0 *
+bit 369 B ? MEMC_MDQ20 368 0 Z
+bit 370 C 0 *
+bit 371 O ? MEMC_MWE_B 370 0 Z
+bit 372 C 0 *
+bit 373 O ? MEMC_MBA1 372 0 Z
+bit 374 C 0 *
+bit 375 O ? MEMC_MA9 374 0 Z
+bit 376 C 0 *
+bit 377 B ? MEMC_MDQ18 376 0 Z
+bit 378 C 0 *
+bit 379 O ? MEMC_MA14 378 0 Z
+bit 380 C 0 *
+bit 381 O ? MEMC_MA13 380 0 Z
+bit 382 C 0 *
+bit 383 O ? MEMC_MBA0 382 0 Z
+bit 384 C 0 *
+bit 385 O ? MEMC_MA11 384 0 Z
+bit 386 C 0 *
+bit 387 O ? MEMC_MA12 386 0 Z
+bit 388 C 0 *
+bit 389 O ? MEMC_MA7 388 0 Z
+bit 390 C 0 *
+bit 391 O ? MEMC_MA8 390 0 Z
+bit 392 C 0 *
+bit 393 O ? MEMC_MBA2 392 0 Z
+bit 394 O ? *
+bit 395 O ? MEMC_MCKE
+bit 396 C 0 *
+bit 397 O ? MEMC_MA10 396 0 Z
+bit 398 O ? *
+bit 399 O ? MEMC_MCK_B
+bit 400 O ? *
+bit 401 O ? MEMC_MCK
+bit 402 C 0 *
+bit 403 O ? MEMC_MA6 402 0 Z
+bit 404 C 0 *
+bit 405 O ? MEMC_MA5 404 0 Z
+bit 406 C 0 *
+bit 407 O ? MEMC_MA4 406 0 Z
+bit 408 C 0 *
+bit 409 O ? MEMC_MA3 408 0 Z
+bit 410 C 0 *
+bit 411 O ? MEMC_MA2 410 0 Z
+bit 412 C 0 *
+bit 413 O ? MEMC_MA1 412 0 Z
+bit 414 C 0 *
+bit 415 O ? MEMC_MA0 414 0 Z
+bit 416 C 0 *
+bit 417 O ? MEMC_MRAS_B 416 0 Z
+bit 418 C 0 *
+bit 419 O ? MEMC_MCAS_B 418 0 Z
+bit 420 C 0 *
+bit 421 B ? MEMC_MDQ2 420 0 Z
+bit 422 C 0 *
+bit 423 O ? MEMC_MCS_B1 422 0 Z
+bit 424 C 0 *
+bit 425 O ? MEMC_MCS_B0 424 0 Z
+bit 426 C 0 *
+bit 427 B ? MEMC_MDQ5 426 0 Z
+bit 428 C 0 *
+bit 429 B ? MEMC_MDQ1 428 0 Z
+bit 430 C 0 *
+bit 431 B ? MEMC_MDQ3 430 0 Z
+bit 432 C 0 *
+bit 433 B ? MEMC_MDQ0 432 0 Z
+bit 434 C 0 *
+bit 435 B ? MEMC_MDQ6 434 0 Z
+bit 436 C 0 *
+bit 437 B ? MEMC_MDQ7 436 0 Z
+bit 438 C 0 *
+bit 439 O ? MEMC_MDM0 438 0 Z
+bit 440 C 0 *
+bit 441 B ? MEMC_MDQS0 440 0 Z
+bit 442 C 0 *
+bit 443 B ? MEMC_MDQ12 442 0 Z
+bit 444 C 0 *
+bit 445 B ? MEMC_MDQ4 444 0 Z
+bit 446 C 0 *
+bit 447 B ? MEMC_MDQ13 446 0 Z
+bit 448 C 0 *
+bit 449 B ? MEMC_MDQ9 448 0 Z
+bit 450 C 0 *
+bit 451 B ? MEMC_MDQ10 450 0 Z
+bit 452 C 0 *
+bit 453 B ? MEMC_MDQ8 452 0 Z
+bit 454 C 0 *
+bit 455 B ? MEMC_MDQ11 454 0 Z
+bit 456 C 0 *
+bit 457 B ? MEMC_MDQ14 456 0 Z
+bit 458 C 0 *
+bit 459 B ? MEMC_MDQ15 458 0 Z
+bit 460 C 0 *
+bit 461 B ? MEMC_MDQS1 460 0 Z
+bit 462 C 0 *
+bit 463 O ? MEMC_MDM1 462 0 Z
+bit 464 O ? *
+bit 465 I ? CFG_CLKIN_DIV_B
+bit 466 O ? *
+bit 467 O ? QUIESCE_B
+bit 468 O ? *
+bit 469 I ? PORESET_B
+bit 470 C 0 *
+bit 471 B ? HRESET_B 470 0 Z
+bit 472 O ? *
+bit 473 I ? SRESET_B
+bit 474 C 0 *
+bit 475 O ? MCP_OUT_B 474 0 Z
+bit 476 C 0 *
+bit 477 B ? SPISEL 476 0 Z
+bit 478 C 0 *
+bit 479 B ? SPICLK 478 0 Z
+bit 480 C 0 *
+bit 481 B ? SPIMISO 480 0 Z
+bit 482 C 0 *
+bit 483 B ? SPIMOSI 482 0 Z
+bit 484 C 0 *
+bit 485 B ? IIC2_SCL 484 0 Z
+bit 486 C 0 *
+bit 487 B ? IIC2_SDA 486 0 Z
+bit 488 C 0 *
+bit 489 B ? IIC1_SCL 488 0 Z
+bit 490 C 0 *
+bit 491 B ? IIC1_SDA 490 0 Z
+bit 492 O ? *
+bit 493 O ? EXT_PWR_CTRL
+bit 494 C 0 *
+bit 495 B ? IRQ_B4 494 0 Z
+bit 496 C 0 *
+bit 497 B ? IRQ_B3 496 0 Z
+bit 498 O ? *
+bit 499 I ? IRQ_B2
+bit 500 O ? *
+bit 501 I ? IRQ_B1
+bit 502 O ? *
+bit 503 I ? IRQ_B0_MCP_IN_B
+bit 504 C 0 *
+bit 505 B ? UART_RTS_B1 504 0 Z
+bit 506 C 0 *
+bit 507 B ? UART_RTS_B2 506 0 Z
+bit 508 C 0 *
+bit 509 B ? UART_CTS_B2 508 0 Z
+bit 510 C 0 *
+bit 511 B ? UART_SIN2 510 0 Z
+bit 512 C 0 *
+bit 513 B ? UART_SOUT2 512 0 Z
+bit 514 C 0 *
+bit 515 B ? UART_CTS_B1 514 0 Z
+bit 516 C 0 *
+bit 517 B ? UART_SOUT1 516 0 Z
+bit 518 C 0 *
+bit 519 B ? UART_SIN1 518 0 Z
+bit 520 C 1 *
+bit 521 O 0 TXA 520 1 Z
+bit 522 O ? *
+bit 523 I ? SD_REF_CLK
+bit 524 O ? *
+bit 525 O ? *
+bit 526 O ? *
+bit 527 C 1 *
+bit 528 O 0 TXB 527 1 Z
+bit 529 C 0 *
+bit 530 B ? TSEC2_TX_ER 529 0 Z
