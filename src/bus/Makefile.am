@@ -32,6 +32,7 @@ libbus_la_SOURCES = \
 	generic_bus.c \
 	generic_bus.h \
 	pxa2x0_mc.h \
+	showmem.c \
 	readmem.c \
 	writemem.c
 

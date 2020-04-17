@@ -200,7 +200,7 @@ CONFIG_CLEAN_VPATH_FILES =
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libbus_la_LIBADD =
 am__libbus_la_SOURCES_DIST = buses.c buses.h buses_list.h \
-	generic_bus.c generic_bus.h pxa2x0_mc.h readmem.c writemem.c \
+	generic_bus.c generic_bus.h pxa2x0_mc.h showmem.c readmem.c writemem.c \
 	ahbjtag.c arm9tdmi.c au1500.c avr32.c bcm1250.c blackfin.c \
 	blackfin.h bf518f_ezbrd.c bf533_stamp.c bf537_stamp.c \
 	bf548_ezkit.c bf561_ezkit.c bscoach.c ejtag.c ejtag_dma.c \
@@ -248,7 +248,7 @@ am__libbus_la_SOURCES_DIST = buses.c buses.h buses_list.h \
 @ENABLE_BUS_SLSUP3_TRUE@am__objects_33 = slsup3.lo
 @ENABLE_BUS_TX4925_TRUE@am__objects_34 = tx4925.lo
 @ENABLE_BUS_ZEFANT_XS3_TRUE@am__objects_35 = zefant-xs3.lo
-am_libbus_la_OBJECTS = buses.lo generic_bus.lo readmem.lo writemem.lo \
+am_libbus_la_OBJECTS = buses.lo generic_bus.lo showmem.lo readmem.lo writemem.lo \
 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
 	$(am__objects_4) $(am__objects_5) $(am__objects_6) \
 	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
@@ -513,7 +513,7 @@ top_srcdir = @top_srcdir@
 LINT_FLAGS = -warnposixheaders +boolint
 noinst_LTLIBRARIES = libbus.la
 libbus_la_SOURCES = buses.c buses.h buses_list.h generic_bus.c \
-	generic_bus.h pxa2x0_mc.h readmem.c writemem.c $(am__append_1) \
+	generic_bus.h pxa2x0_mc.h showmem.c readmem.c writemem.c $(am__append_1) \
 	$(am__append_2) $(am__append_3) $(am__append_4) \
 	$(am__append_5) $(am__append_6) $(am__append_7) \
 	$(am__append_8) $(am__append_9) $(am__append_10) \

@@ -88,6 +88,9 @@ _URJ_CMD(poke)
 #ifndef URJ_CMD_SKIP_pod
 _URJ_CMD(pod)
 #endif
+#ifndef URJ_CMD_SKIP_showmem
+_URJ_CMD(showmem)
+#endif
 #ifndef URJ_CMD_SKIP_readmem
 _URJ_CMD(readmem)
 #endif

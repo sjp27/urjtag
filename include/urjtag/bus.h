@@ -37,6 +37,8 @@ extern urj_bus_t *urj_bus;
 int urj_bus_readmem (urj_bus_t *bus, FILE *f, uint32_t addr, uint32_t len);
 /** @return URJ_STATUS_OK on success; URJ_STATUS_FAIL on error */
 int urj_bus_writemem (urj_bus_t *bus, FILE *f, uint32_t addr, uint32_t len);
+/** @return URJ_STATUS_OK on success; URJ_STATUS_FAIL on error */
+int urj_bus_showmem (urj_bus_t *bus, uint32_t addr, uint32_t len);
 
 typedef struct
 {
