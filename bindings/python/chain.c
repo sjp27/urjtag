@@ -821,7 +821,7 @@ urj_pyc_flashmem (urj_pychain_t *self, PyObject *args)
 {
     urj_chain_t *urc = self->urchain;
     int msbin;
-    int noverify = 0;
+    int verify = 0;
     long unsigned adr = 0;
     FILE *f;
     char *optstr = NULL;
@@ -832,7 +832,7 @@ urj_pyc_flashmem (urj_pychain_t *self, PyObject *args)
         return NULL;
 
     if (!PyArg_ParseTuple
-        (args, "ss|i", &optstr, &fname, &noverify))
+        (args, "ss|i", &optstr, &fname, &verify))
         return NULL;
 
     msbin = strcasecmp ("msbin", optstr) == 0;
@@ -847,9 +847,9 @@ urj_pyc_flashmem (urj_pychain_t *self, PyObject *args)
     }
 
     if (msbin)
-        r = urj_flashmsbin (urj_bus, f, noverify);
+        r = urj_flashmsbin (urj_bus, f, verify);
     else
-        r = urj_flashmem (urj_bus, f, adr, noverify);
+        r = urj_flashmem (urj_bus, f, adr, verify);
 
     fclose (f);
     return Py_BuildValue ("i", r);

@@ -108,7 +108,7 @@ do { \
 } while (0)
 
 int
-urj_flashmsbin (urj_bus_t *bus, FILE *f, int noverify)
+urj_flashmsbin (urj_bus_t *bus, FILE *f, int verify)
 {
     uint32_t adr;
     urj_flash_cfi_query_structure_t *cfi;
@@ -205,7 +205,7 @@ urj_flashmsbin (urj_bus_t *bus, FILE *f, int noverify)
 
     flash_driver->readarray (urj_flash_cfi_array);
 
-    if (noverify)
+    if (verify == 0)
     {
         urj_log (URJ_LOG_LEVEL_NORMAL, _("verify skipped\n"));
         return URJ_STATUS_OK;
@@ -295,7 +295,7 @@ find_block (urj_flash_cfi_query_structure_t *cfi, int adr, int bus_width,
 }
 
 int
-urj_flashmem (urj_bus_t *bus, FILE *f, uint32_t addr, int noverify)
+urj_flashmem (urj_bus_t *bus, FILE *f, uint32_t addr, int verify)
 {
     uint32_t adr;
     urj_flash_cfi_query_structure_t *cfi;
@@ -407,7 +407,7 @@ urj_flashmem (urj_bus_t *bus, FILE *f, uint32_t addr, int noverify)
 
     flash_driver->readarray (urj_flash_cfi_array);
 
-    if (noverify)
+    if (verify == 0)
     {
         urj_log (URJ_LOG_LEVEL_NORMAL, _("verify skipped\n"));
         return URJ_STATUS_OK;

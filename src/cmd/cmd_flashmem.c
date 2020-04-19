@@ -41,7 +41,7 @@ static int
 cmd_flashmem_run (urj_chain_t *chain, char *params[])
 {
     int msbin;
-    int noverify = 0;
+    int verify = 0;
     long unsigned adr = 0;
     FILE *f;
     int paramc = urj_cmd_params (params);
@@ -66,9 +66,9 @@ cmd_flashmem_run (urj_chain_t *chain, char *params[])
         return URJ_STATUS_FAIL;
 
     if (paramc > 3)
-        noverify = strcasecmp ("noverify", params[3]) == 0;
+        verify = strcasecmp ("verify", params[3]) == 0;
     else
-        noverify = 0;
+        verify = 0;
 
     f = fopen (params[2], FOPEN_R);
     if (!f)
@@ -78,9 +78,9 @@ cmd_flashmem_run (urj_chain_t *chain, char *params[])
     }
 
     if (msbin)
-        r = urj_flashmsbin (urj_bus, f, noverify);
+        r = urj_flashmsbin (urj_bus, f, verify);
     else
-        r = urj_flashmem (urj_bus, f, adr, noverify);
+        r = urj_flashmem (urj_bus, f, adr, verify);
 
     fclose (f);
 
@@ -91,19 +91,19 @@ static void
 cmd_flashmem_help (void)
 {
     urj_log (URJ_LOG_LEVEL_NORMAL,
-             _("Usage: %s ADDR FILENAME [noverify]\n"
-               "Usage: %s FILENAME [noverify]\n"
+             _("Usage: %s ADDR FILENAME [verify]\n"
+               "Usage: %s FILENAME [verify]\n"
                "Program FILENAME content to flash memory.\n"
                "\n"
                "ADDR       target address for raw binary image\n"
                "FILENAME   name of the input file\n"
                "%-10s FILENAME is in MS .bin format (for WinCE)\n"
-               "%-10s if specified, verification is skipped\n"
+               "%-10s if specified, verification is done\n"
                "\n"
                "ADDR could be in decimal or hexadecimal (prefixed with 0x) form.\n"
                "\n"
                "Supported Flash Memories:\n"),
-             "flashmem", "flashmem msbin", "msbin", "noverify");
+             "flashmem", "flashmem msbin", "msbin", "verify");
 
     urj_cmd_show_list (urj_flash_flash_drivers);
 }
@@ -123,8 +123,8 @@ cmd_flashmem_complete (urj_chain_t *chain, char ***matches, size_t *match_cnt,
                                         text_len, false);
         break;
 
-    case 3: /* [noverify] */
-        urj_completion_mayben_add_match (matches, match_cnt, text, text_len, "noverify");
+    case 3: /* [verify] */
+        urj_completion_mayben_add_match (matches, match_cnt, text, text_len, "verify");
         break;
     }
 }
