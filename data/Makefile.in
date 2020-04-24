@@ -469,6 +469,8 @@ nobase_dist_pkgdata_DATA = \
 	freescale/mpc8378/mpc8378 \
 	freescale/mpc8379/STEPPINGS \
 	freescale/mpc8379/mpc8379 \
+	freescale/mpc8313/STEPPINGS \
+	freescale/mpc8313/mpc8313 \
 	ibm/PARTS \
 	ibm/ppc440gx/STEPPINGS \
 	ibm/ppc440gx/ppc440gx \

@@ -296,7 +296,7 @@ am__depfiles_remade = ./$(DEPDIR)/ahbjtag.Plo ./$(DEPDIR)/arm9tdmi.Plo \
 	./$(DEPDIR)/mpc824x.Plo ./$(DEPDIR)/mpc8313.Plo \
 	./$(DEPDIR)/mpc837x.Plo ./$(DEPDIR)/ppc405ep.Plo \
 	./$(DEPDIR)/ppc440gx_ebc8.Plo ./$(DEPDIR)/prototype.Plo \
-	./$(DEPDIR)/pxa2x0.Plo ./$(DEPDIR)/readmem.Plo \
+	./$(DEPDIR)/pxa2x0.Plo ./$(DEPDIR)/showmem.Plo ./$(DEPDIR)/readmem.Plo \
 	./$(DEPDIR)/s3c4510x.Plo ./$(DEPDIR)/sa1110.Plo \
 	./$(DEPDIR)/sh7727.Plo ./$(DEPDIR)/sh7750r.Plo \
 	./$(DEPDIR)/sh7751r.Plo ./$(DEPDIR)/sharc21065l.Plo \
@@ -613,6 +613,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ppc440gx_ebc8.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prototype.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pxa2x0.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/showmem.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/readmem.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/s3c4510x.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sa1110.Plo@am__quote@ # am--include-marker
@@ -818,6 +819,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/ppc440gx_ebc8.Plo
 	-rm -f ./$(DEPDIR)/prototype.Plo
 	-rm -f ./$(DEPDIR)/pxa2x0.Plo
+	-rm -f ./$(DEPDIR)/showmem.Plo
 	-rm -f ./$(DEPDIR)/readmem.Plo
 	-rm -f ./$(DEPDIR)/s3c4510x.Plo
 	-rm -f ./$(DEPDIR)/sa1110.Plo
@@ -906,6 +908,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/ppc440gx_ebc8.Plo
 	-rm -f ./$(DEPDIR)/prototype.Plo
 	-rm -f ./$(DEPDIR)/pxa2x0.Plo
+	-rm -f ./$(DEPDIR)/showmem.Plo
 	-rm -f ./$(DEPDIR)/readmem.Plo
 	-rm -f ./$(DEPDIR)/s3c4510x.Plo
 	-rm -f ./$(DEPDIR)/sa1110.Plo

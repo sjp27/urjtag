@@ -166,7 +166,7 @@ am__libcmd_la_SOURCES_DIST = cmd.h cmd_list.h generated_cmd_list.h \
 	cmd_register.c cmd_initbus.c cmd_print.c cmd_part.c cmd_bus.c \
 	cmd_instruction.c cmd_shift.c cmd_dr.c cmd_get.c cmd_test.c \
 	cmd_debug.c cmd_shell.c cmd_set.c cmd_endian.c cmd_peekpoke.c \
-	cmd_pod.c cmd_readmem.c cmd_writemem.c cmd_flashmem.c \
+	cmd_pod.c cmd_showmem.c cmd_readmem.c cmd_writemem.c cmd_flashmem.c \
 	cmd_eraseflash.c cmd_lockflash.c cmd_include.c cmd_addpart.c \
 	cmd_cmd.c cmd_usleep.c cmd_bfin.c cmd_pld.c cmd_svf.c \
 	cmd_bsdl.c cmd_stapl.c
@@ -177,7 +177,7 @@ am__objects_1 = cmd_frequency.lo cmd_cable.lo cmd_reset.lo \
 	cmd_initbus.lo cmd_print.lo cmd_part.lo cmd_bus.lo \
 	cmd_instruction.lo cmd_shift.lo cmd_dr.lo cmd_get.lo \
 	cmd_test.lo cmd_debug.lo cmd_shell.lo cmd_set.lo cmd_endian.lo \
-	cmd_peekpoke.lo cmd_pod.lo cmd_readmem.lo cmd_writemem.lo \
+	cmd_peekpoke.lo cmd_pod.lo cmd_showmem.lo cmd_readmem.lo cmd_writemem.lo \
 	cmd_flashmem.lo cmd_eraseflash.lo cmd_lockflash.lo \
 	cmd_include.lo cmd_addpart.lo cmd_cmd.lo cmd_usleep.lo \
 	cmd_bfin.lo cmd_pld.lo
@@ -221,7 +221,7 @@ am__depfiles_remade = ./$(DEPDIR)/cmd_addpart.Plo \
 	./$(DEPDIR)/cmd_part.Plo ./$(DEPDIR)/cmd_peekpoke.Plo \
 	./$(DEPDIR)/cmd_pld.Plo ./$(DEPDIR)/cmd_pod.Plo \
 	./$(DEPDIR)/cmd_print.Plo ./$(DEPDIR)/cmd_quit.Plo \
-	./$(DEPDIR)/cmd_readmem.Plo ./$(DEPDIR)/cmd_register.Plo \
+	./$(DEPDIR)/cmd_showmem.Plo ./$(DEPDIR)/cmd_readmem.Plo ./$(DEPDIR)/cmd_register.Plo \
 	./$(DEPDIR)/cmd_reset.Plo ./$(DEPDIR)/cmd_salias.Plo \
 	./$(DEPDIR)/cmd_scan.Plo ./$(DEPDIR)/cmd_set.Plo \
 	./$(DEPDIR)/cmd_shell.Plo ./$(DEPDIR)/cmd_shift.Plo \
@@ -467,6 +467,7 @@ always_enabled_cmd_files = \
 	cmd_endian.c \
 	cmd_peekpoke.c \
 	cmd_pod.c \
+	cmd_showmem.c \
 	cmd_readmem.c \
 	cmd_writemem.c \
 	cmd_flashmem.c \
@@ -581,6 +582,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_pod.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_print.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_quit.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_showmem.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_readmem.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_register.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmd_reset.Plo@am__quote@ # am--include-marker
@@ -790,6 +792,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/cmd_pod.Plo
 	-rm -f ./$(DEPDIR)/cmd_print.Plo
 	-rm -f ./$(DEPDIR)/cmd_quit.Plo
+	-rm -f ./$(DEPDIR)/cmd_showmem.Plo
 	-rm -f ./$(DEPDIR)/cmd_readmem.Plo
 	-rm -f ./$(DEPDIR)/cmd_register.Plo
 	-rm -f ./$(DEPDIR)/cmd_reset.Plo
@@ -878,6 +881,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/cmd_pod.Plo
 	-rm -f ./$(DEPDIR)/cmd_print.Plo
 	-rm -f ./$(DEPDIR)/cmd_quit.Plo
+	-rm -f ./$(DEPDIR)/cmd_showmem.Plo
 	-rm -f ./$(DEPDIR)/cmd_readmem.Plo
 	-rm -f ./$(DEPDIR)/cmd_register.Plo
 	-rm -f ./$(DEPDIR)/cmd_reset.Plo
