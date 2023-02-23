@@ -39,6 +39,8 @@
 #include "buses.h"
 #include "generic_bus.h"
 
+#define SHIFT8BIT
+
 typedef struct
 {
     int boot_nfoe;
@@ -46,6 +48,9 @@ typedef struct
     uint32_t last_adr;
     urj_part_signal_t *ar[23];
     urj_part_signal_t *nrcs0;
+    urj_part_signal_t *nrcs1;
+    urj_part_signal_t *nrcs2;
+    urj_part_signal_t *nrcs3;
     urj_part_signal_t *nwe;
     urj_part_signal_t *nfoe;
     urj_part_signal_t *d[32];
@@ -58,6 +63,9 @@ typedef struct
 #define LAST_ADR        ((bus_params_t *) bus->params)->last_adr
 #define AR              ((bus_params_t *) bus->params)->ar
 #define nRCS0           ((bus_params_t *) bus->params)->nrcs0
+#define nRCS1           ((bus_params_t *) bus->params)->nrcs1
+#define nRCS2           ((bus_params_t *) bus->params)->nrcs2
+#define nRCS3           ((bus_params_t *) bus->params)->nrcs3
 #define nWE             ((bus_params_t *) bus->params)->nwe
 #define nFOE            ((bus_params_t *) bus->params)->nfoe
 #define D               ((bus_params_t *) bus->params)->d
@@ -202,6 +210,12 @@ mpc824x_bus_new (urj_chain_t *chain, const urj_bus_driver_t *driver,
     failed |= urj_bus_generic_attach_sig (part, &(AR[22]), "SDMA12");
 
     failed |= urj_bus_generic_attach_sig (part, &(nRCS0), "nRCS0");
+
+    failed |= urj_bus_generic_attach_sig (part, &(nRCS1), "nRCS1");
+
+    failed |= urj_bus_generic_attach_sig (part, &(nRCS2), "nRCS2");
+
+    failed |= urj_bus_generic_attach_sig (part, &(nRCS3), "nRCS3");
 
     failed |= urj_bus_generic_attach_sig (part, &(nWE), "nWE");
 
@@ -400,10 +414,17 @@ setup_data (urj_bus_t *bus, uint32_t adr, uint32_t d)
     if (area.width > 64)
         return;
 
+#ifdef SHIFT8BIT
+    for (i = 0; i < 8; i++)
+        urj_part_set_signal (p, D[24 + i], 1,
+                             (d >> ((REVBITS == 1) ? BUS_WIDTH - 1 - i : i)) &
+                             1);
+#else
     for (i = 0; i < area.width; i++)
         urj_part_set_signal (p, D[i], 1,
                              (d >> ((REVBITS == 1) ? BUS_WIDTH - 1 - i : i)) &
                              1);
+#endif
 
     /* Just for debugging */
     if (dbgData)
@@ -449,9 +470,15 @@ get_data (urj_bus_t *bus, uint32_t adr)
     if (area.width > 64)
         return 0;
 
+#ifdef SHIFT8BIT
+    for (i = 0; i < 8; i++)
+        d |= (uint32_t) (urj_part_get_signal (p, D[24 + i]) <<
+                         ((REVBITS == 1) ? BUS_WIDTH - 1 - i : i));
+#else
     for (i = 0; i < area.width; i++)
         d |= (uint32_t) (urj_part_get_signal (p, D[i]) <<
                          ((REVBITS == 1) ? BUS_WIDTH - 1 - i : i));
+#endif
 
     /* Just for debugging */
     if (dbgData)
@@ -498,6 +525,9 @@ mpc824x_bus_read_start (urj_bus_t *bus, uint32_t adr)
 
     /* see Figure 6-45 in [1] */
     urj_part_set_signal_low (p, nRCS0);
+    urj_part_set_signal_high(p, nRCS1);
+    urj_part_set_signal_high(p, nRCS2);
+    urj_part_set_signal_high(p, nRCS3);
     urj_part_set_signal_high (p, nWE);
     urj_part_set_signal_low (p, nFOE);
 
@@ -557,6 +587,9 @@ mpc824x_bus_write (urj_bus_t *bus, uint32_t adr, uint32_t data)
 
     /* see Figure 6-47 in [1] */
     urj_part_set_signal_low (p, nRCS0);
+    urj_part_set_signal_high(p, nRCS1);
+    urj_part_set_signal_high(p, nRCS2);
+    urj_part_set_signal_high(p, nRCS3);
     urj_part_set_signal_high (p, nWE);
     urj_part_set_signal_high (p, nFOE);
 
